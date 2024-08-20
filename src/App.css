@@ -1,12 +1,12 @@
 body {
-    height: 100vh;
+    height: 90vh;
     background-image: url('./assets/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 .home , .game{
-    height: calc(100vh - 10vh);
+    height: calc(100vh - 40vh);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,7 +47,7 @@ body {
 
 @media (max-width:576px){
     .home-btn{
-        margin-top: 1rem;
+        margin-top: 4rem;
         position: static;
     }
     .game-box{
