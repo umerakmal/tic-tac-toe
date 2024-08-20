@@ -127,7 +127,7 @@ export default function Game() {
 
     return (
         <div className="game">
-            <h2 className="text-center mt-5">Tic Tac Toe</h2>
+            <h2 className="text-center mt-5 text-danger">Tic Tac Toe</h2>
             <ScoreBoard player={player} winner={winner} draw={draw} resetGame={resetGame} />
             <GameBoard board={board} handleClick={handleClick} />
         </div>

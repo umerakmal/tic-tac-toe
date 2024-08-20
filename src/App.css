@@ -1,11 +1,12 @@
-/* body {
-    background-image: url('./assets/bg.jpeg');
+body {
+    height: 100vh;
+    background-image: url('./assets/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 0 30%;
-} */
+    background-attachment: fixed;
+}
 .home {
-    height: calc(100vh - 100px);
+    height: inherit;
 }
 
 /* Board.css */
