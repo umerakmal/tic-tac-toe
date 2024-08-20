@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import GameBoard from './GameBoard';
 import ScoreBoard from './ScoreBoard';
 
@@ -9,7 +9,7 @@ export default function Game() {
     const [board, setBoard] = useState(Array(9).fill(null));
     const [winner, setWinner] = useState(null);
     const [draw, setDraw] = useState(false);
-
+    const navigate = useNavigate();
     useEffect(() => {
         if (mode === 'single-game' && player === 'O' && !winner && !draw) {
             const aiMove = makeAiMove(board);
@@ -48,7 +48,7 @@ export default function Game() {
             [0, 4, 8],
             [2, 4, 6],
         ];
-    
+
         // Check if AI can win
         for (let i = 0; i < lines.length; i++) {
             const [a, b, c] = lines[i];
@@ -62,7 +62,7 @@ export default function Game() {
                 return a;
             }
         }
-    
+
         // Block the player from winning
         for (let i = 0; i < lines.length; i++) {
             const [a, b, c] = lines[i];
@@ -76,27 +76,27 @@ export default function Game() {
                 return a;
             }
         }
-    
+
         // If no win/block, take the center if available
         if (board[4] === null) {
             return 4;
         }
-    
+
         // Otherwise, take a random corner
         const corners = [0, 2, 6, 8];
         const availableCorners = corners.filter(index => board[index] === null);
         if (availableCorners.length > 0) {
             return availableCorners[Math.floor(Math.random() * availableCorners.length)];
         }
-    
+
         // If no corners available, take a random available move
         const availableMoves = board
             .map((val, index) => (val === null ? index : null))
             .filter(val => val !== null);
-        
+
         return availableMoves[Math.floor(Math.random() * availableMoves.length)];
     };
-    
+
 
     const calculateWinner = (board) => {
         const lines = [
@@ -126,10 +126,17 @@ export default function Game() {
     };
 
     return (
-        <div className="game">
-            <h2 className="text-center mt-5 text-danger">Tic Tac Toe</h2>
-            <ScoreBoard player={player} winner={winner} draw={draw} resetGame={resetGame} />
-            <GameBoard board={board} handleClick={handleClick} />
-        </div>
+        <>
+            <div className='game-box'>
+                <div className="game">
+                    <h2 className="text-center mt-5 text-danger">Tic Tac Toe</h2>
+                    <ScoreBoard player={player} winner={winner} draw={draw} resetGame={resetGame} />
+                    <GameBoard board={board} handleClick={handleClick} />
+                </div>
+                <button type="button" className="home-btn btn btn-info" onClick={() => {
+                    navigate('/')
+                }}>Back To Main Menu</button>
+            </div>
+        </>
     );
 }
