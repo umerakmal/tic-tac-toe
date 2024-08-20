@@ -8,7 +8,7 @@ export default function Home() {
     }
     return (
         <>
-            <h1 className='text-center text-danger'>Welcome to Tic-Tac-Toe Game</h1>
+            <h1 className='text-center  mt-5 text-danger'>Welcome to Tic-Tac-Toe Game</h1>
             <div className='home'>
                 <div className="home-buttons d-flex justify-content-center align-items-center flex-column gap-3">
                     <button className='btn btn-primary px-5 py-3' onClick={() => handleCLick('single')}>Single Player</button>

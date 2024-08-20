@@ -127,14 +127,16 @@ export default function Game() {
 
     return (
         <>
-            <div className="game">
-                <h2 className="text-center mt-5 text-danger">Tic Tac Toe</h2>
-                <ScoreBoard player={player} winner={winner} draw={draw} resetGame={resetGame} />
-                <GameBoard board={board} handleClick={handleClick} />
+            <div className='game-box'>
+                <div className="game">
+                    <h2 className="text-center mt-5 text-danger">Tic Tac Toe</h2>
+                    <ScoreBoard player={player} winner={winner} draw={draw} resetGame={resetGame} />
+                    <GameBoard board={board} handleClick={handleClick} />
+                </div>
+                <button type="button" className="home-btn btn btn-info" onClick={() => {
+                    navigate('/')
+                }}>Back To Main Menu</button>
             </div>
-            <button type="button" className="home-btn btn btn-info" onClick={() => {
-                navigate('/')
-            }}>Back To Main Menu</button>
         </>
     );
 }
