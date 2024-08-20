@@ -1,0 +1,49 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+.pnpm-debug.log*
+
+# production
+dist/
+build/
+
+# misc
+.DS_Store
+.env
+.env.local
+.vscode/
+.idea/
+*.log
+
+# Vite cache
+.vite
+
+# local env files
+.env.*
+.env
+
+# MacOS specific files
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# npm cache
+.npm
+
+# yarn cache
+.yarn/*
+!.yarn/cache
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.yarn-error.log
+
+# parcel-bundler cache (in case you're using Parcel)
+.cache/
+.parcel-cache/
