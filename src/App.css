@@ -6,7 +6,11 @@ body {
     background-attachment: fixed;
 }
 .home {
-    height: inherit;
+    height: calc(100vh - 10vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 /* Board.css */
@@ -33,4 +37,10 @@ body {
 
 .cell:hover {
     background-color: #ddd;
+}
+
+.home-btn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
